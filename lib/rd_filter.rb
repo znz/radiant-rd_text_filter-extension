@@ -25,7 +25,8 @@ class RdFilter < TextFilter::Base
     end
 
     def apply_to_DocumentElement(element, content)
-      content.join("")
+      foottext = make_foottext || ""
+      content.join("") + foottext
     end
 
     def apply_to_RefToElement(element, content)
