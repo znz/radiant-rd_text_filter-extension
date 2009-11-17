@@ -3,8 +3,8 @@
 
 class RdTextFilterExtension < Radiant::Extension
   version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/rd_text_filter"
+  description "Filter RadiantCMS content with RD"
+  url "http://github.com/znz/radiant-rd_text_filter-extension"
 
   def activate
     RdTextFilter
