@@ -1,10 +1,8 @@
-require 'text_filter'
 require 'rd/rdfmt'
 require 'rd/rd2html-lib'
 
-class RdFilter < TextFilter::Base
-
-  register "RD"
+class RdTextFilter < TextFilter
+  filter_name "RD"
 
   def filter(text)
     src = []

@@ -24,8 +24,8 @@ require 'rake/testtask'
 rspec_base = File.expand_path(RADIANT_ROOT + '/vendor/plugins/rspec/lib')
 $LOAD_PATH.unshift(rspec_base) if File.exist?(rspec_base)
 require 'spec/rake/spectask'
-require 'cucumber'
-require 'cucumber/rake/task'
+#require 'cucumber'
+#require 'cucumber/rake/task'
 
 # Cleanup the RADIANT_ROOT constant so specs will load the environment
 Object.send(:remove_const, :RADIANT_ROOT)
@@ -41,7 +41,7 @@ Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
 end
 
-task :features => 'spec:integration'
+#task :features => 'spec:integration'
 
 namespace :spec do
   desc "Run all specs in spec directory with RCov"
@@ -51,7 +51,7 @@ namespace :spec do
     t.rcov = true
     t.rcov_opts = ['--exclude', 'spec', '--rails']
   end
-  
+
   desc "Print Specdoc for all specs"
   Spec::Rake::SpecTask.new(:doc) do |t|
     t.spec_opts = ["--format", "specdoc", "--dry-run"]
@@ -65,7 +65,8 @@ namespace :spec do
       t.spec_files = FileList["spec/#{sub}/**/*_spec.rb"]
     end
   end
-  
+
+=begin
   desc "Run the Cucumber features"
   Cucumber::Rake::Task.new(:integration) do |t|
     t.fork = true
@@ -73,6 +74,7 @@ namespace :spec do
     # t.feature_pattern = "#{extension_root}/features/**/*.feature"
     t.profile = "default"
   end
+=end
 
   # Setup specs for stats
   task :statsetup do
