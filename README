@@ -3,3 +3,7 @@
 Filter RadiantCMS content with RD
 
 fork from http://rubyidentity.org/svn/ruby-lang/ruby-lang.org/trunk/www/vendor/plugins/rd_text_filter r312
+
+== Installation
+
+  git clone git://github.com/znz/radiant-rd_text_filter-extension.git vendor/extensions/rd_text_filter
